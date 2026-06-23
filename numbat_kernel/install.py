@@ -9,9 +9,9 @@ from jupyter_client.kernelspec import KernelSpecManager
 from IPython.utils.tempdir import TemporaryDirectory
 from .resources import _ICON_PATH
 
-kernel_json = {"argv":[sys.executable,"-m","bash_kernel", "-f", "{connection_file}"],
- "display_name":"Bash",
- "language":"bash",
+kernel_json = {"argv":[sys.executable,"-m","numbat_kernel", "-f", "{connection_file}"],
+ "display_name":"numbat",
+ "language":"numbat",
  "codemirror_mode":"shell",
  "env":{"PS1": "$"}
 }
@@ -26,7 +26,7 @@ def install_my_kernel_spec(user=True, prefix=None):
             pathlib.Path(td) / _ICON_PATH.name
         )
         print('Installing IPython kernel spec')
-        KernelSpecManager().install_kernel_spec(td, 'bash', user=user, prefix=prefix)
+        KernelSpecManager().install_kernel_spec(td, 'numbat', user=user, prefix=prefix)
 
 def _is_root():
     try:
