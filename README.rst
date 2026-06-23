@@ -7,7 +7,7 @@ install it with
 
 ::
 
-   pip install --editable .`
+   pip install --editable .
    python -m numbat_kernel.install
 
 the ``–editable`` flag is optional, it allows one to edit the kernel in
